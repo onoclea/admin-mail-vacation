@@ -1,0 +1,7 @@
+Vacation message (using managesieve interface) settings web interface written in Ruby/Sinatra.
+
+It uses ruby-managesieve library.
+
+Tested against Dovecot (http://www.dovecot.org/) managesieve server implementation.
+
+--- Pawel J. Sawicki <pjs@pjs.name>

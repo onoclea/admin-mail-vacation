@@ -1,0 +1,23 @@
+!!! XML
+!!!
+%html
+ %head
+  %title Vacation message
+  %meta{ 'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8' }
+ %body
+  %h1
+   Vacation message has been set.
+
+  %table{ :cellpadding => 5 }
+   %tr
+    %td
+     %label{ :for => 'subject' } Subject
+    %td
+     %input{ :name => 'subject', :type => 'text', :size => 64, :readonly => 'true', :disabled => 'true', :value => params[:subject] }
+   %tr
+    %td
+     %label{ :for => 'message' } Vacation message
+    %td
+     = find_and_preserve do
+      %textarea{ :name => 'message', :cols => 64, :rows => 10, :readonly => 'true', :disabled => 'true' }>
+       = @vacation_message

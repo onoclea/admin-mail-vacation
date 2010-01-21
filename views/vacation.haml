@@ -1,0 +1,40 @@
+!!! XML
+!!!
+%html
+ %head
+  %title Vacation message
+  %meta{ 'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8' }
+ %body
+  %h1 Vacation message
+  %h2 In order to delete your vacation message fill both username and password but keep subject and message fields empty.
+  - if @message
+   %h2
+    = @message
+
+  #form
+   %form{ :method => 'POST', :action => '' }
+    %table{ :cellpadding => 5 }
+     %tr
+      %td
+       %label{ :for => 'username' } Username
+      %td
+       %input{ :name => 'username', :type => 'text', :value => @username}
+     %tr
+      %td
+       %label{ :for => 'password' } Password
+      %td
+       %input{ :name => 'password', :type => 'password', :value => @password }
+     %tr
+      %td
+       %label{ :for => 'subject' } Subject
+      %td
+       %input{ :name => 'subject', :type => 'text', :size => 64, :value => @subject }
+     %tr
+      %td
+       %label{ :for => 'vacation_message' } Vacation message
+      %td
+       %textarea{ :name => 'vacation_message', :cols => 64, :rows => 10 }
+        = @vacation_message
+     %tr
+      %td{ :colspan => 2 }
+       %input{ :value => 'Set', :type => 'submit' }
